@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ctrl+/",
-  description: "ctrl+/",
+  title: "ctrlslash - Living docs for agentic code",
+  description: "Living docs for agentic code",
 };
 
 export default function RootLayout({
