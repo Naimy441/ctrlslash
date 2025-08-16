@@ -63,14 +63,16 @@ const WaitlistForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ 
+    <form onSubmit={handleSubmit} className="waitlist-form" style={{ 
       display: 'flex', 
-      flexDirection: 'column',
+      flexDirection: 'row',
       gap: '12px', 
-      alignItems: 'center', 
+      alignItems: 'center',
+      justifyContent: 'center',
       marginTop: '1.5rem',
       width: '100%',
-      maxWidth: '600px'
+      maxWidth: '600px',
+      margin: '1.5rem auto 0'
     }}>
       <input
         type="email"
@@ -80,7 +82,7 @@ const WaitlistForm = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         style={{
-          width: '100%',
+          flex: '1',
           padding: '12px 16px',
           border: '1px solid rgba(229, 231, 235, 0.3)',
           borderRadius: '8px',
@@ -106,7 +108,6 @@ const WaitlistForm = () => {
         type="submit"
         disabled={isSubmitting}
         style={{
-          width: '100%',
           padding: '12px 20px',
           border: '0',
           borderRadius: '8px',
@@ -118,7 +119,8 @@ const WaitlistForm = () => {
           fontWeight: '600',
           transition: 'all 0.2s ease',
           backdropFilter: 'blur(10px)',
-          boxShadow: '0 0 10px rgba(0,0,0,0.3)'
+          boxShadow: '0 0 10px rgba(0,0,0,0.3)',
+          whiteSpace: 'nowrap'
         }}
         onMouseEnter={(e) => {
           if (!isSubmitting) {
@@ -138,7 +140,8 @@ const WaitlistForm = () => {
         {isSubmitting ? "Joining..." : "Join the Beta Testers"}
       </button>
       {message && (
-        <span style={{
+        <span className="message" style={{
+          marginLeft: '8px',
           fontSize: 'clamp(0.7rem, 1.8vw, 1rem)',
           fontFamily: 'monospace',
           color: message.includes('🎉') ? '#10b981' : message.includes('error') ? '#ef4444' : '#e5e7eb',
@@ -162,7 +165,7 @@ export default function BrandHeader() {
     <div 
       style={{
         position: 'absolute',
-        top: '25%',
+        top: '20%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
         zIndex: 10,
@@ -232,6 +235,21 @@ export default function BrandHeader() {
               }}
             >
               Solving the context gap in AI-powered development
+            </div>
+
+            <div 
+              style={{
+                fontSize: 'clamp(0.2rem, 1.5vw, 1.2rem)',
+                fontFamily: 'monospace',
+                fontStyle: 'italic',
+                fontWeight: '200',
+                color: '#d1d5db',
+                textShadow: '0 0 8px rgba(0,0,0,0.8)',
+                letterSpacing: '0.03em',
+                marginBottom: '0.5rem'
+              }}
+            >
+              Reducing dependency and framework halucinations by 80%
             </div>
             
             <TextType 

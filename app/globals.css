@@ -28,3 +28,21 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Responsive waitlist form */
+@media (max-width: 768px) {
+  .waitlist-form {
+    flex-direction: column !important;
+  }
+  
+  .waitlist-form input,
+  .waitlist-form button {
+    width: 100% !important;
+    flex: none !important;
+  }
+  
+  .waitlist-form .message {
+    margin-left: 0 !important;
+    margin-top: 8px !important;
+  }
+}
