@@ -75,6 +75,37 @@ export default function BrandHeader() {
               whiteSpace: 'nowrap'
             }}
           >
+            {/* New tagline */}
+            <div 
+              style={{
+                fontSize: 'clamp(0.8rem, 3vw, 2.5rem)',
+                fontFamily: 'monospace',
+                fontWeight: '600',
+                color: '#e5e7eb',
+                textShadow: '0 0 10px rgba(0,0,0,0.8)',
+                letterSpacing: '0.05em',
+                marginBottom: '0.5rem'
+              }}
+            >
+              The Open-Source Google for AI IDEs
+            </div>
+            
+            {/* Italicized description */}
+            <div 
+              style={{
+                fontSize: 'clamp(0.6rem, 2.5vw, 2rem)',
+                fontFamily: 'monospace',
+                fontStyle: 'italic',
+                fontWeight: '400',
+                color: '#d1d5db',
+                textShadow: '0 0 8px rgba(0,0,0,0.8)',
+                letterSpacing: '0.03em',
+                marginBottom: '1rem'
+              }}
+            >
+              Solving the context gap in AI-powered development
+            </div>
+            
             <TextType 
               text={["50+ Languages", "100+ Frameworks", "500+ APIs", "1000+ Packages"]}
               style={{
