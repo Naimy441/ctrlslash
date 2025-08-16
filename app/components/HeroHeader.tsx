@@ -63,7 +63,15 @@ const WaitlistForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '12px', alignItems: 'center', marginTop: '1.5rem' }}>
+    <form onSubmit={handleSubmit} style={{ 
+      display: 'flex', 
+      flexDirection: 'column',
+      gap: '12px', 
+      alignItems: 'center', 
+      marginTop: '1.5rem',
+      width: '100%',
+      maxWidth: '600px'
+    }}>
       <input
         type="email"
         name="email"
@@ -72,7 +80,7 @@ const WaitlistForm = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         style={{
-          flex: 1,
+          width: '100%',
           padding: '12px 16px',
           border: '1px solid rgba(229, 231, 235, 0.3)',
           borderRadius: '8px',
@@ -98,6 +106,7 @@ const WaitlistForm = () => {
         type="submit"
         disabled={isSubmitting}
         style={{
+          width: '100%',
           padding: '12px 20px',
           border: '0',
           borderRadius: '8px',
@@ -130,7 +139,6 @@ const WaitlistForm = () => {
       </button>
       {message && (
         <span style={{
-          marginLeft: '8px',
           fontSize: 'clamp(0.7rem, 1.8vw, 1rem)',
           fontFamily: 'monospace',
           color: message.includes('🎉') ? '#10b981' : message.includes('error') ? '#ef4444' : '#e5e7eb',
